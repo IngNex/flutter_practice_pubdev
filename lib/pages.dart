@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_navigationbar/menu/main_menu.dart';
 import 'package:flutter_practice_navigationbar/provider_firebase_storage/main_fb_storage.dart';
+import 'package:flutter_practice_navigationbar/theme_color/main_theme_color.dart';
 
 class Pages extends StatelessWidget {
   const Pages({super.key});
@@ -33,6 +34,16 @@ class Pages extends StatelessWidget {
                 );
               },
               child: const Text('MainFbStorage'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>  MainThemeColor(),
+                  ),
+                );
+              },
+              child: const Text('ThemeColor'),
             ),
           ],
         ),
