@@ -30,12 +30,14 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.2
   curved_navigation_bar: ^1.0.1
+  dot_navigation_bar: ^1.0.2
   firebase_core: ^2.24.0
   firebase_storage: ^11.5.3
   flutter:
     sdk: flutter
   flutter_colorpicker: ^1.0.3
   image_picker: ^1.0.4
+  persistent_bottom_nav_bar: ^5.0.2
   provider: ^6.1.1
 
 dev_dependencies:

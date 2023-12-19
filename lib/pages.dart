@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_navigationbar/bottomnavigationbar.dart/main_bnb.dart';
 import 'package:flutter_practice_navigationbar/menu/main_menu.dart';
 import 'package:flutter_practice_navigationbar/provider_firebase_storage/main_fb_storage.dart';
 import 'package:flutter_practice_navigationbar/switch_personal.dart/page.dart';
@@ -56,6 +57,16 @@ class Pages extends StatelessWidget {
                 );
               },
               child: const Text('Switch'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>  MainNavigation(),
+                  ),
+                );
+              },
+              child: const Text('BNB'),
             ),
           ],
         ),

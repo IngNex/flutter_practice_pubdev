@@ -25,6 +25,10 @@ class MyApp extends StatelessWidget {
       create: (context) => SwitchState(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
         home: Pages(),
       ),
     );
