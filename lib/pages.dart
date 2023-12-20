@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_navigationbar/bnb_animation/bnb_animation.dart';
 import 'package:flutter_practice_navigationbar/bottomnavigationbar.dart/main_bnb.dart';
 import 'package:flutter_practice_navigationbar/menu/main_menu.dart';
 import 'package:flutter_practice_navigationbar/provider_firebase_storage/main_fb_storage.dart';
@@ -68,6 +69,17 @@ class Pages extends StatelessWidget {
               },
               child: const Text('BNB'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>  BNBmain(),
+                  ),
+                );
+              },
+              child: const Text('BNB main'),
+            ),
+            
           ],
         ),
       ),

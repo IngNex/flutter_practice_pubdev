@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_navigationbar/bottomnavigationbar.dart/pages/home.dart';
@@ -30,7 +31,7 @@ class MainNavigation extends StatelessWidget {
 //       body: _buildScreens()[_currentIndex],
 //       bottomNavigationBar: Stack(
 //         children: [
-          
+
 //           DotNavigationBar(
 //             currentIndex: _currentIndex,
 //             onTap: (index) {
@@ -82,32 +83,24 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('BottomNavigationBar with ListView Example'),
       ),
-       extendBody: true,
-      body: _buildListView(_selectedIndex), // Muestra el ListView según el índice seleccionado
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(15),
-        child: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index; // Actualiza el índice seleccionado
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard),
-              label: 'Dashboard',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: 'Notifications',
-            ),
-          ],
-        ),
+      extendBody: true,
+      body: _buildListView(
+          _selectedIndex), // Muestra el ListView según el índice seleccionado
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        color: Colors.blue, // Color del ítem seleccionado
+        buttonBackgroundColor: Colors.blue, // Color del botón central
+        items: <Widget>[
+          Icon(Icons.home, size: 30),
+          Icon(Icons.explore, size: 30),
+          Icon(Icons.person, size: 30),
+          Icon(Icons.settings, size: 30),
+        ],
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index; // Actualiza el índice seleccionado
+          });
+        },
       ),
     );
   }
@@ -119,10 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // El constructor itemBuilder se llama para cada elemento del ListView
         // idx es el índice del elemento actual (0 a itemCount - 1)
         return ListTile(
-          title: Text('Item ${idx + 1} on page ${index + 1}'), // Mostrar el número del elemento y la página actual
+          title: Text(
+              'Item ${idx + 1} on page ${index + 1}'), // Mostrar el número del elemento y la página actual
         );
       },
     );
   }
-
 }
